@@ -111,7 +111,7 @@
     background-color: var(--header-color);
 }
 
-.input-group{
+aside .input-group{
     height: 35px;
 }
 span.input-group-text{
@@ -153,4 +153,25 @@ span.input-group-text{
     font-size: 1.1rem;
     font-weight: bold;
     display: block;
-} 
+}
+
+.container-message{
+    background-image: url(../img/mine.jpg);
+    background-position: center;
+}
+
+.col-footer{
+    background-color: var(--header-color);
+    height: 80px;
+}
+
+main .input-group{
+    height: 50px;
+}
+
+.col-footer button {
+    font-size: 1.3rem;
+    background: none;
+    border: none;
+    color: gray;
+}
