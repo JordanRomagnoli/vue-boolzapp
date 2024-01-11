@@ -7,24 +7,111 @@
 
         <!-- bootstrap -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <!-- 12 Bool -->
-        <link rel="stylesheet" href="css/12bool.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <!-- css -->
         <link rel="stylesheet" href="css/style.css">
 
     </head>
     <body class="debug">
-        <header>
-            <!-- HEADER -->
-        </header>
 
-        <main>
-            <!-- MAIN -->
-        </main>
+        <div class="background" id="app">
 
-        <footer>
-            <!-- FOOTER -->
-        </footer>
+            <div class="container-chat row">
+                <aside class="col-4 p-0">
+                    <div>
+                        <div class="col-header">
+
+                            <div class="d-flex align-items-center">
+                                
+                                <div class="img-frame">
+                                    <img src="img/avatar_io.jpg" alt="sofia">
+                                </div>
+                                <span class="name">
+                                    Sofia
+                                </span>
+    
+                            </div>
+    
+                            <ul class="d-flex align-items-center m-0  list-unstyled">
+                                <li>
+                                    <button>
+                                        <i class="fa-solid fa-circle-notch"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <i class="fa-solid fa-message"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                </li>
+                            </ul>
+    
+                        </div>
+                        <div class="notify">
+                            <span class="d-flex justify-content-center align-items-center icon-frame">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </span>
+
+                            <div class="ms-2">
+                                <p class="m-0">
+                                    Ricevi notifiche di nuovi messaggi
+                                </p>
+                                <a href="#nogo">
+                                    Attiva notifiche desktop
+                                </a>
+                            </div>
+                        </div>
+                        <div class="search-chat">
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text rounded-start-1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input type="text" class="form-control rounded-end-1" placeholder="Cerca o inizia una nuova chat">
+                              </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="chat-group d-flex flex-column list-unstyled ">
+                        
+                        <li v-for="singleChat in contacts" class="p-3 d-flex justify-content-between m-0">
+
+                            <div class="d-flex align-items-center">
+                                
+                                <div class="img-frame-chat">
+                                    <img :src="singleChat.avatar" :alt="singleChat.name">
+                                </div>
+                                <div class="chat-info">
+                                    <span class="name-chat">
+                                        {{ singleChat.name }}
+                                    </span>
+                                    <span class="small-chat-info">
+                                        Ultimo messaggio
+                                    </span>
+                                </div>
+                                
+                            </div>
+
+                            <span class="small-chat-info">
+                                orario
+                            </span>
+
+                        </li>
+                        
+                    </ul>
+                </aside>
+                <main class="col-8 p-0">
+
+                    <div class="col-header">
+
+                    </div>
+
+                </main>
+            </div>
+           
+        </div>
 
         <!-- Vue -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
