@@ -165,13 +165,18 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            contatore: 0,
             
         }
     },
     methods: {
 
-        
-	    
+        messageStatus(i) {
+            
+            this.contatore = i
+
+        }
+
     }
 }).mount('#app')

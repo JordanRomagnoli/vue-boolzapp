@@ -76,7 +76,7 @@
                     
                     <ul class="chat-group d-flex flex-column list-unstyled ">
                         
-                        <li v-for="singleChat in contacts" class="p-3 d-flex justify-content-between m-0">
+                        <li v-for="(singleChat, index) in contacts" class="p-3 d-flex justify-content-between m-0" @click="messageStatus(index)" :class="contatore == index ? 'active' : ''">
 
                             <div class="d-flex align-items-center">
                                 
@@ -108,11 +108,11 @@
                         <div class="d-flex align-items-center">
                                 
                             <div class="img-frame">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="contacts[contatore].avatar" :alt="contacts[contatore].name">
                             </div>
                             <div class="chat-info">
                                 <span class="name-chat">
-                                        Michele
+                                    {{contacts[contatore].name}}
                                 </span>
                                 <span class="small-chat-info">
                                     Ultimo accesso oggi alle
@@ -140,7 +140,15 @@
                         </ul>
                     </div>
 
-                    <div class="flex-grow-1 container-message">
+                    <div class=" d-flex  flex-column justify-content-end  container-message">
+
+                        <!-- Template messaggi -->
+                        <div v-for="(singleMessageObj, index) in contacts[contatore].messages" class="row g-0 align-items-center p-2 px-4" :class="contacts[contatore].messages[index].status == 'sent' ? 'message-sent' : 'message-recived'">
+                            <span class="col-auto message">
+                                {{singleMessageObj.message}}
+                            </span>
+                        </div>
+
 
                     </div>
 

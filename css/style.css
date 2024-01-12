@@ -4,6 +4,8 @@
     --header-color : #eaeaea;
     --margin-header : 5px;
     --notify-bg : #8edafc;
+    --message-sent : #d5f9ba;
+    --message-recived : #ffffff;
 }
 
 
@@ -140,6 +142,10 @@ span.input-group-text{
     border-top: 1px solid var(--header-color);
 }
 
+.active{
+    background-color: lightgray;
+}
+
 .chat-info{
     margin-left: 12px;
 }
@@ -158,11 +164,18 @@ span.input-group-text{
 .container-message{
     background-image: url(../img/mine.jpg);
     background-position: center;
+    overflow: auto;
+    height: 100%;
 }
 
 .col-footer{
     background-color: var(--header-color);
     height: 80px;
+}
+
+main{
+    height: 100%;
+    overflow: hidden;
 }
 
 main .input-group{
@@ -174,4 +187,22 @@ main .input-group{
     background: none;
     border: none;
     color: gray;
+}
+
+.message{
+    display: block;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.message-sent{
+    justify-content: flex-end;
+}
+
+.message-sent > span{
+    background-color: var(--message-sent);
+}
+
+.message-recived > span{
+    background-color: var(--message-recived);
 }
