@@ -195,8 +195,7 @@ main .input-group{
 }
 
 .message{
-    display: block;
-    padding: 15px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
 }
 
@@ -204,10 +203,10 @@ main .input-group{
     justify-content: flex-end;
 }
 
-.message-sent > span{
+.message-sent > div{
     background-color: var(--message-sent);
 }
 
-.message-recived > span{
+.message-recived > div{
     background-color: var(--message-recived);
 }

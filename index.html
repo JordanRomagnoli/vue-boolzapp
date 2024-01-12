@@ -145,13 +145,14 @@
                         </ul>
                     </div>
 
-                    <div class=" d-flex  flex-column justify-content-end  container-message">
+                    <div class=" d-flex  flex-column container-message p-2">
 
                         <!-- Template messaggi -->
                         <div v-for="(singleMessageObj, index) in contacts[contatore].messages" class="row g-0 align-items-center p-2 px-4" :class="contacts[contatore].messages[index].status == 'sent' ? 'message-sent' : 'message-recived'">
-                            <span class="col-auto message">
-                                {{singleMessageObj.message}}
-                            </span>
+                            <div class="col-auto message d-flex flex-wrap">
+                                <span>{{singleMessageObj.message}}</span>
+                                <div class="small-chat-info w-100 text-end ">orario</div>      
+                            </div>
                         </div>
 
 
