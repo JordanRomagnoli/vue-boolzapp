@@ -167,6 +167,7 @@ createApp({
                 }
             ],
             contatore: 0,
+            newMessageInput: '',
             
         }
     },
@@ -176,6 +177,22 @@ createApp({
             
             this.contatore = i
 
+        },
+
+        addMessage(){
+            if(this.newMessageInput.trim().length > 0){
+                
+                let newMessageObj = {};
+
+                newMessageObj.date = 'orario da inserire';
+                newMessageObj.message = this.newMessageInput;
+                newMessageObj.status = 'sent';
+
+                this.contacts[this.contatore].messages.push(newMessageObj);
+
+                this.newMessageInput = '';
+
+            };
         }
 
     }
