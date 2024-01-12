@@ -156,7 +156,7 @@
                                         <a href="#nogo" class="text-decoration-none text-black accordion" @click="toggleDrop(index)"><i class="fa-solid fa-chevron-down"></i></a>
                                         <ul class="list-unstyled position-absolute accordion-menu z-1" v-if="contacts[index].dropCounter == true">
                                             <li>Message Info</li>
-                                            <li>Delete Message</li>
+                                            <li @click="removeMessage(contacts[index].messages, index)">Delete Message</li>
                                         </ul>
                                     </div>
                                     

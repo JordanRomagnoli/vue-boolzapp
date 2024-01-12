@@ -231,7 +231,11 @@ createApp({
             
             this.contacts[i].dropCounter = !this.contacts[i].dropCounter
            
-        }
+        },
+
+        removeMessage(array, i) {
+            array.splice(i, 1);
+        },
 
     }
 }).mount('#app')
