@@ -179,7 +179,7 @@ createApp({
 
         },
 
-        addMessage(){
+        addMyMessage(){
             if(this.newMessageInput.trim().length > 0){
                 
                 let newMessageObj = {};
@@ -193,6 +193,25 @@ createApp({
                 this.newMessageInput = '';
 
             };
+
+            let timeout;
+
+            timeout = setTimeout(() => {
+                let newMessageUserObj = {};
+
+                newMessageUserObj.date = 'orario da inserire';
+                newMessageUserObj.message = 'ok';
+                newMessageUserObj.status = 'received';
+
+                this.contacts[this.contatore].messages.push(newMessageUserObj);
+            }, 1000);
+            
+        },
+
+        addUserMessage(){
+            
+            
+
         }
 
     }
