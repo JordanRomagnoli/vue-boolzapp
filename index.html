@@ -150,8 +150,18 @@
                         <!-- Template messaggi -->
                         <div v-for="(singleMessageObj, index) in contacts[contatore].messages" class="row g-0 align-items-center p-2 px-4" :class="contacts[contatore].messages[index].status == 'sent' ? 'message-sent' : 'message-recived'">
                             <div class="col-auto message d-flex flex-wrap">
-                                <span>{{singleMessageObj.message}}</span>
-                                <div class="small-chat-info w-100 text-end ">orario</div>      
+                                <div class="w-100 d-flex justify-content-between">
+                                    <span>{{singleMessageObj.message}}</span>
+                                    <div>
+                                        <a href="#nogo" class="text-decoration-none text-black accordion" @click="toggleDrop(index)"><i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="list-unstyled position-absolute accordion-menu z-1" v-if="contacts[index].dropCounter == true">
+                                            <li>Message Info</li>
+                                            <li>Delete Message</li>
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                                <div class="small-chat-info w-100 text-end">orario</div>      
                             </div>
                         </div>
 

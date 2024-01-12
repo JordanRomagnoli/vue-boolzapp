@@ -199,6 +199,16 @@ main .input-group{
     border-radius: 10px;
 }
 
+.accordion{
+    padding: 2px;
+    display: block;
+    filter: opacity(0);
+}
+
+.message:hover .accordion{
+    filter: opacity(1);
+}
+
 .message-sent{
     justify-content: flex-end;
 }
@@ -210,3 +220,24 @@ main .input-group{
 .message-recived > div{
     background-color: var(--message-recived);
 }
+
+.accordion-menu{
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 0;
+    border-radius: 8px;
+    display: block;
+    
+}
+
+.accordion-menu > li {
+    padding: 10px 10px;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.accordion-menu > li:last-child {
+    border-top: 1px solid lightgrey;;
+}
+
