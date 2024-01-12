@@ -7,7 +7,7 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: 'img/avatar_1.jpg',
-                    visible: true,
+                    visible: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -166,9 +166,9 @@ createApp({
                     ],
                 }
             ],
+            searchChat: '',
             contatore: 0,
             newMessageInput: '',
-            
         }
     },
     methods: {
@@ -208,11 +208,15 @@ createApp({
             
         },
 
-        addUserMessage(){
-            
-            
+        filteredContacts() {
+            const lowerCaseSearch = this.searchChat.toLowerCase();
 
-        }
+            return this.contacts.filter((singleChat) => {
+              const lowerCaseName = singleChat.name.toLowerCase();
+              
+              return lowerCaseName.includes(lowerCaseSearch);
+            });
+        },
 
     }
 }).mount('#app')

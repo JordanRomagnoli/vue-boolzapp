@@ -137,7 +137,7 @@ span.input-group-text{
     min-height: 100px;
 }
 
-.chat-group > li{
+.chat-group > div{
     
     border-top: 1px solid var(--header-color);
 }
@@ -152,7 +152,12 @@ span.input-group-text{
 
 .small-chat-info{
     color: gray;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+}
+
+.small-chat-last{
+    color: gray;
+    font-size: 0.8rem;
 }
 
 .name-chat{
