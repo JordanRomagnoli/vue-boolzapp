@@ -27,6 +27,9 @@
     width: 1500px;
     margin: 0 auto;
     background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 2px 3px 21px -3px rgba(0,0,0,0.15);
 }
 
 .container-chat > aside{
@@ -40,7 +43,7 @@
 .col-header{
     height: 70px;
     background-color: var(--header-color);
-    padding: 8px;
+    padding: 8px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -176,6 +179,7 @@ span.input-group-text{
 .col-footer{
     background-color: var(--header-color);
     height: 80px;
+    padding: 12px 0;
 }
 
 main{
