@@ -7,7 +7,7 @@ createApp({
                 {
                     name: 'Michele',
                     avatar: 'img/avatar_1.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -236,7 +236,7 @@ createApp({
 
               const lowerCaseName = this.contacts[i].name.toLowerCase();
               this.contacts[i].visible = lowerCaseName.includes(lowerCaseSearch);
-              
+
             }
         },
 
@@ -246,13 +246,14 @@ createApp({
            
         },
 
-
-        // ??
-        removeMessage(i) {
-
-            this.contacts[this.contatore].messages.splice(i, 1);
-
+        removeMessage(messageIndex) {
+            
+            this.contacts[this.contatore].messages.splice(messageIndex, 1);
+            
+            console.log(this.contacts[this.contatore].messages)
+            
         },
+        
 
     }
 }).mount('#app')

@@ -91,14 +91,14 @@
                                             <span class="name-chat">
                                                 {{ singleChat.name }}
                                             </span>
-                                            <span class="small-chat-last">
+                                            <span class="small-chat-last" v-if="singleChat.messages.length - 1 >= 0">
                                                 {{ singleChat.messages[singleChat.messages.length - 1].message }}
                                             </span>
                                         </div>
                                         
                                     </div>
         
-                                    <span class="small-chat-info">
+                                    <span class="small-chat-info" v-if="singleChat.messages.length - 1 >= 0">
                                         {{ singleChat.messages[singleChat.messages.length - 1].date }}
                                     </span>
         
