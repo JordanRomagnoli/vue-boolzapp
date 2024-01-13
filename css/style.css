@@ -137,7 +137,7 @@ span.input-group-text{
     min-height: 100px;
 }
 
-.chat-group > div{
+.chat-group > div > div{
     
     border-top: 1px solid var(--header-color);
 }

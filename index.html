@@ -69,7 +69,7 @@
                         <div class="search-chat">
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text rounded-start-1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" class="form-control rounded-end-1" placeholder="Cerca o inizia una nuova chat" v-model="searchChat">
+                                <input type="text" class="form-control rounded-end-1" placeholder="Cerca o inizia una nuova chat" v-model="searchChat" @keyup="updateVisibility()">
                             </div>
                         </div>
                     </div>
@@ -78,30 +78,32 @@
 
                         <div class="d-flex flex-column">
                         
-                            <div v-for="(singleChat, index) in filteredContacts()" class="p-3 d-flex justify-content-between m-0" @click="messageStatus(index)" :class="contatore == index ? 'active' : ''">
-    
-                                <div class="d-flex align-items-center">
-                                    
-                                    <div class="img-frame-chat">
-                                        <img :src="singleChat.avatar" :alt="singleChat.name">
+                            <div v-for="(singleChat, index) in contacts">
+
+                                <div v-if="singleChat.visible" class="p-3 d-flex justify-content-between m-0" @click="messageStatus(index)" :class="contatore == index ? 'active' : ''">
+        
+                                    <div class="d-flex align-items-center">
+                                        
+                                        <div class="img-frame-chat">
+                                            <img :src="singleChat.avatar" :alt="singleChat.name">
+                                        </div>
+                                        <div class="chat-info">
+                                            <span class="name-chat">
+                                                {{ singleChat.name }}
+                                            </span>
+                                            <span class="small-chat-last">
+                                                {{ singleChat.messages[singleChat.messages.length - 1].message }}
+                                            </span>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="chat-info">
-                                        <span class="name-chat">
-                                            {{ singleChat.name }}
-                                        </span>
-                                        <span class="small-chat-last">
-                                            {{ singleChat.messages[singleChat.messages.length - 1].message }}
-                                        </span>
-                                    </div>
-                                    
+        
+                                    <span class="small-chat-info">
+                                        {{ singleChat.messages[singleChat.messages.length - 1].date }}
+                                    </span>
+        
                                 </div>
-    
-                                <span class="small-chat-info">
-                                    {{ singleChat.messages[singleChat.messages.length - 1].date }}
-                                </span>
-    
                             </div>
-                            
                         </div>
                     </div>
                     
@@ -154,9 +156,9 @@
                                     <span>{{singleMessageObj.message}}</span>
                                     <div>
                                         <a href="#nogo" class="text-decoration-none text-black accordion" @click="toggleDrop(index)"><i class="fa-solid fa-chevron-down"></i></a>
-                                        <ul class="list-unstyled position-absolute accordion-menu z-1" v-if="contacts[index].dropCounter == true">
+                                        <ul class="list-unstyled position-absolute accordion-menu z-1" v-if="singleMessageObj.dropCounter == true">
                                             <li>Message Info</li>
-                                            <li @click="removeMessage(contacts[index].messages, index)">Delete Message</li>
+                                            <li @click="removeMessage(index)">Delete Message</li>
                                         </ul>
                                     </div>
                                     
