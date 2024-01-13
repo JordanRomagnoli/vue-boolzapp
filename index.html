@@ -99,7 +99,7 @@
                                     </div>
         
                                     <span class="small-chat-info" v-if="singleChat.messages.length - 1 >= 0">
-                                        {{ singleChat.messages[singleChat.messages.length - 1].date }}
+                                        {{ splitHourAside(index, singleChat.messages.length - 1) }}
                                     </span>
         
                                 </div>
@@ -163,7 +163,7 @@
                                     </div>
                                     
                                 </div>
-                                <div class="small-chat-info w-100 text-end">orario</div>      
+                                <div class="small-chat-info w-100 text-end">{{splitHourMessage(index)}}</div>      
                             </div>
                         </div>
 

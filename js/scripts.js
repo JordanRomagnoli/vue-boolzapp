@@ -253,6 +253,22 @@ createApp({
             console.log(this.contacts[this.contatore].messages)
             
         },
+
+        splitHourAside(indexUser, messageIndex){
+            let dateOfSingleMessage = this.contacts[indexUser].messages[messageIndex].date;
+            let divide = dateOfSingleMessage.split(' ');
+            let soloOra = divide[1].split(':').slice(0, 2).join(':');
+
+            return soloOra;
+        },
+
+        splitHourMessage(i){
+            let dateOfSingleMessage = this.contacts[this.contatore].messages[i].date;
+            let divide = dateOfSingleMessage.split(' ');
+            let soloOra = divide[1].split(':').slice(0, 2).join(':');
+
+            return soloOra;
+        }
         
 
     }
