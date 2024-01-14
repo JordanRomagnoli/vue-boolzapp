@@ -20,6 +20,7 @@
     background: linear-gradient(to bottom, #009688 15%, #dbdbd4 15%);
     display: flex;
     align-items: center;
+    padding: 0 20px;
 }
 
 .background > .container-chat {

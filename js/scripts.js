@@ -205,7 +205,7 @@ createApp({
                 
                 let newMessageObj = {};
 
-                newMessageObj.date = 'orario da inserire';
+                newMessageObj.date = this.getCurrentDateTime();
                 newMessageObj.message = this.newMessageInput;
                 newMessageObj.status = 'sent';
 
@@ -218,7 +218,7 @@ createApp({
                 timeout = setTimeout(() => {
                     let newMessageUserObj = {};
 
-                    newMessageUserObj.date = 'orario da inserire';
+                    newMessageUserObj.date = this.getCurrentDateTime();
                     newMessageUserObj.message = 'ok';
                     newMessageUserObj.status = 'received';
 
@@ -250,8 +250,6 @@ createApp({
             
             this.contacts[this.contatore].messages.splice(messageIndex, 1);
             
-            console.log(this.contacts[this.contatore].messages)
-            
         },
 
         splitHourAside(indexUser, messageIndex){
@@ -268,7 +266,21 @@ createApp({
             let soloOra = divide[1].split(':').slice(0, 2).join(':');
 
             return soloOra;
-        }
+        },
+
+        getCurrentDateTime() {
+            const oggi = new Date();
+            const giorno = oggi.getDate().toString().padStart(2, '0');
+            const mese = (oggi.getMonth() + 1).toString().padStart(2, '0');
+            const anno = oggi.getFullYear();
+            const ore = oggi.getHours().toString().padStart(2, '0');
+            const minuti = oggi.getMinutes().toString().padStart(2, '0');
+            const secondi = oggi.getSeconds().toString().padStart(2, '0');
+        
+            const orarioFinale = `${giorno}/${mese}/${anno} ${ore}:${minuti}:${secondi}`;
+
+            return orarioFinale;
+        },
         
 
     }
