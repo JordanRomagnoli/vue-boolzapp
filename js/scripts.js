@@ -251,7 +251,12 @@ createApp({
 
         toggleDrop(i){
             
+            for(let j = 0; j < this.contacts[this.contatore].messages.length; j++){
+                this.contacts[this.contatore].messages[j].dropCounter = false
+            }
+
             this.contacts[this.contatore].messages[i].dropCounter = !this.contacts[this.contatore].messages[i].dropCounter
+
            
         },
 
