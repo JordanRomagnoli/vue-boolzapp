@@ -213,9 +213,9 @@ createApp({
 
                 this.newMessageInput = '';
 
-                let timeout;
+                let UserMessage;
 
-                timeout = setTimeout(() => {
+                UserMessage = setTimeout(() => {
                     let newMessageUserObj = {};
 
                     newMessageUserObj.date = this.getCurrentDateTime();
@@ -243,12 +243,6 @@ createApp({
         toggleDrop(i){
             
             this.contacts[this.contatore].messages[i].dropCounter = !this.contacts[this.contatore].messages[i].dropCounter
-            
-
-            for(let j = 0; j < this.contacts[this.contatore].messages.length; j++){
-
-                
-            }
            
         },
 

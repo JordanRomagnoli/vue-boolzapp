@@ -74,37 +74,35 @@
                         </div>
                     </div>
 
-                    <div class="chat-group">
+                    <div class="chat-group d-flex flex-column">
 
-                        <div class="d-flex flex-column">
-                        
-                            <div v-for="(singleChat, index) in contacts">
+                        <div v-for="(singleChat, index) in contacts">
 
-                                <div v-if="singleChat.visible" class="p-3 d-flex justify-content-between m-0" @click="messageStatus(index)" :class="contatore == index ? 'active' : ''">
-        
-                                    <div class="d-flex align-items-center">
-                                        
-                                        <div class="img-frame-chat">
-                                            <img :src="singleChat.avatar" :alt="singleChat.name">
-                                        </div>
-                                        <div class="chat-info">
-                                            <span class="name-chat">
-                                                {{ singleChat.name }}
-                                            </span>
-                                            <span class="small-chat-last" v-if="singleChat.messages.length - 1 >= 0">
-                                                {{ singleChat.messages[singleChat.messages.length - 1].message }}
-                                            </span>
-                                        </div>
-                                        
+                            <div v-if="singleChat.visible" class="p-3 d-flex justify-content-between m-0" @click="messageStatus(index)" :class="contatore == index ? 'active' : ''">
+    
+                                <div class="d-flex align-items-center">
+                                    
+                                    <div class="img-frame-chat">
+                                        <img :src="singleChat.avatar" :alt="singleChat.name">
                                     </div>
-        
-                                    <span class="small-chat-info" v-if="singleChat.messages.length - 1 >= 0">
-                                        {{ splitHourAside(index, singleChat.messages.length - 1) }}
-                                    </span>
-        
+                                    <div class="chat-info">
+                                        <span class="name-chat">
+                                            {{ singleChat.name }}
+                                        </span>
+                                        <span class="small-chat-last overflow-hidden" v-if="singleChat.messages.length - 1 >= 0">
+                                            {{ singleChat.messages[singleChat.messages.length - 1].message }}
+                                        </span>
+                                    </div>
+                                    
                                 </div>
+    
+                                <span class="small-chat-info" v-if="singleChat.messages.length - 1 >= 0">
+                                    {{ splitHourAside(index, singleChat.messages.length - 1) }}
+                                </span>
+    
                             </div>
                         </div>
+                        
                     </div>
                     
                     
