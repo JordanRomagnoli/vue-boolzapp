@@ -208,6 +208,7 @@ createApp({
                 newMessageObj.date = this.getCurrentDateTime();
                 newMessageObj.message = this.newMessageInput;
                 newMessageObj.status = 'sent';
+                newMessageObj.dropCounter = false;
 
                 this.contacts[this.contatore].messages.push(newMessageObj);
 
@@ -221,6 +222,7 @@ createApp({
                     newMessageUserObj.date = this.getCurrentDateTime();
                     newMessageUserObj.message = 'ok';
                     newMessageUserObj.status = 'received';
+                    newMessageUserObj.dropCounter = false;
 
                     this.contacts[this.contatore].messages.push(newMessageUserObj);
                 }, 1000);
