@@ -190,6 +190,7 @@ createApp({
             searchChat: '',
             contatore: 0,
             newMessageInput: '',
+            newMessage : '',
         }
     },
     methods: {
@@ -202,6 +203,8 @@ createApp({
         addMyMessage(){
 
             if(this.newMessageInput.trim().length > 0){
+
+                this.randomMessage()
                 
                 let newMessageObj = {};
 
@@ -220,14 +223,18 @@ createApp({
                     let newMessageUserObj = {};
 
                     newMessageUserObj.date = this.getCurrentDateTime();
-                    newMessageUserObj.message = 'ok';
+
+                    newMessageUserObj.message = this.newMessage;
+                    
                     newMessageUserObj.status = 'received';
                     newMessageUserObj.dropCounter = false;
 
                     this.contacts[this.contatore].messages.push(newMessageUserObj);
                 }, 1000);
 
-            };
+            }else{
+                this.newMessageInput = '';
+            }
             
         },
 
@@ -282,6 +289,15 @@ createApp({
             const orarioFinale = `${giorno}/${mese}/${anno} ${ore}:${minuti}:${secondi}`;
 
             return orarioFinale;
+        },
+
+        randomMessage(){
+            axios.get('https://flynn.boolean.careers/exercises/api/random/sentence').then((res) => {
+
+                this.newMessage = res.data.response;
+                
+
+            });
         },
         
 
