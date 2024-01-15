@@ -202,12 +202,19 @@ main .input-group{
 .message{
     padding: 10px 20px;
     border-radius: 10px;
+    max-width: 50%;
+    word-wrap: break-word;
+}
+
+.message .small-chat-info{
+    bottom: 15px;
 }
 
 .accordion{
     padding: 2px;
     display: block;
     filter: opacity(0);
+    box-shadow: 2px 3px 21px -3px var(--message-sent);
 }
 
 .message:hover .accordion{
